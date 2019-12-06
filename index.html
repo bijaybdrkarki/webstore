@@ -13,48 +13,70 @@
   <body>
     <!-- Note: From this point oneward, this document should be considered 100% customizable. The elements and structure below are simply an example template to get you started. Your products and application will have different criteria that will give you the opportunity to customize all aspects of this document to your needs. Use what you need, discard or modify anything that's not directly useful in reaching your end goal. -->
 
-    <header>
+    <header class="header">
       <!-- Site logo, replace with your own -->
-      <a href="index.html"><img src="img/logo.svg" alt="HTML Logo (replace this)"></a>
-
-      <button type="button">
-        <span class="material-icons">menu</span>
-      </button>
-
-      <!-- Navigation menu and toggle button (example) -->
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#">Webpage</a>
-            <ul>
-              <li><a href="#">Subpage</a></li>
-              <li><a href="#">Subpage</a></li>
-              <li><a href="#">Subpage</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Webpage</a></li>
-          <li><a href="#">Webpage</a></li>
-          <li><a href="#">Webpage</a></li>
+      <div class="navbar">
+        <a href="index.html" class="logo"><img src="img/logo.png" class="logo" alt="HTML Logo (replace this)" ></a>
+        <div class="drop-menu">
+        <button type="button">
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+      
+      
+        <!-- Search the site -->
+        <form class="searchbar"> 
+          <label>Search
+            <input type="search" name="find" id="find" class="search">
+          </label>
+          <button type="button"><span class="material-icons">search</span></button>
+        </form>  
+          <!-- Navigation menu and toggle button (example) -->
+        <nav class="mainmenu" aria-label="Primary">
+          <ul>
+            <li class="dropdown"><a href="#">Products</a>
+              <ul class="submenu">
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Watches</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact and FAQ'S</a></li>
+          </ul>
+        </nav>
+      
+          <!-- Additional functionality or links -->
+        <ul class="cart">
+          <li><button><span class="material-icons">account_box</span></button></li>
+          <li><button><span class="material-icons">shopping_cart</span></button></li>
         </ul>
-      </nav>
-
-      <!-- Search the site -->
-      <form>
-        <label>Search
-          <input type="search" name="find" id="find">
-        </label>
-        <button type="button"><span class="material-icons">search</span></button>
-      </form>
-
-      <!-- Additional functionality or links -->
-      <ul>
-        <li><button><span class="material-icons">favorite_border</span></button></li>
-        <li><button><span class="material-icons">shopping_cart</span></button></li>
-      </ul>
+    </div> 
     </header>
 
     <main>
+      <div class="responsive">
+        <img src="/img/bag.png" alt="shoppingbag">
+        <div class="text-block position1">
+          <h2>Buy Gifts to your Friends and Family this Christmas</h2>
+        </div>
+      </div>
+      <div class="responsive">
+        <img src="/img/giftcard.png" alt="giftcard">
+        <div class="text-block position1">
+            <h2>Remember your Friends and Family with Everest Gift cards</h2>
+        </div>
+      </div>
+      <div class="responsive">
+        <img src="img/productcollection.jpeg" alt="product Collection">
+        <div class="text-block position2">
+            <h2>Get 50% Off on exciting Products</h2>
+        </div>
+      </div>
       <header>
-        <h1>Sale on [Category Name]</h1>
+        <h1>Sale on <strong id="categoryName">Products</strong></h1>
 
         <!-- Filtering product form -->
         <form>

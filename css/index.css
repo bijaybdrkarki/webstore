@@ -1,0 +1,138 @@
+.material-icons{
+    background: transparent;
+    border:none;
+}
+/* css for header section starts */
+.header {
+    background-color: #faf4f1;
+    width: 100%;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+}
+.navbar {
+    /* padding: 0.5em 0.5em; */
+    display: grid;
+    grid-template-columns: 2em  auto  4.5em;
+    grid-template-areas:  "drop logo cart"
+                            "srch srch srch"
+                            "menu menu menu";
+}
+.drop-menu{
+    grid-area: drop;
+    padding: 0.5em 0 0 0.5em;
+}
+.logo{
+    height: auto;
+    max-height: 50px;
+    /* max-width: 50%; */
+    grid-area: logo;
+    text-align: center;
+   
+}
+.cart{
+    grid-area: cart;
+    vertical-align: middle;
+    padding:0.5em 0.6em 0 0;
+    
+}
+.cart li{
+    display: inline;    
+}
+.searchbar{
+    grid-area: srch;
+    padding-left: 1em;
+    
+    
+}
+.search{
+    /* background-color:#dddddd; */
+    padding: 0.3em;
+    border: black 0.05em solid;
+    border-radius: 0.5em;
+    color: #aaaaaa;
+}
+.mainmenu {
+    grid-area: menu;
+    
+    text-align: left;
+    padding-left: 1em;
+  }
+    .mainmenu a {
+      display: block;
+      color: #111;
+      text-decoration: none;
+      line-height: 2.5;
+    }
+    .mainmenu a:hover {
+      color: #ffffff;
+      background-color: #dddddd;
+    }
+.submenu{
+    display: none;
+    position: absolute;
+    left: 10em;
+    top: 5em;
+    background-color: lightyellow;
+    z-index: 1;
+    width: 100%;
+}
+    .submenu a{
+        display: block;
+        color: #111;
+        text-decoration: none;
+        line-height: 2.5;
+    }
+    .mainmenu a:hover{
+        color: red;
+      background-color: #dddddd;
+    }
+.dropdown > a::after{
+    content: " >";
+    color: black;
+}
+.dropdown:hover .submenu{
+    display: block;
+}
+/* css for header ends */
+/* css for filtering section starts */
+h1{
+    font-size: 2em;
+}
+.text-block{
+    background-color: black;
+    opacity: 0.65;
+    color: lightcoral;
+    padding: 1em;
+    text-align: center;
+
+}
+.position1{
+    position: absolute;
+    top: 12em;
+    left: 1em;
+}
+.position2{
+    position: absolute;
+    top: 15em;
+    left: 1em;
+    opacity: 0.8;
+}
+.responsive{
+    position: relative; 
+}
+
+.responsive img{ 
+    display: block;
+   width:100%;
+   max-width: 30em;
+   /* height: auto; */
+   min-height:15em;
+   margin-right: auto;
+   margin-left: 0.5em;
+   border: solid 0.1em black;
+    margin-bottom: 0.5em;
+}
+.responsive img:hover{
+    opacity: 0.6;
+}
