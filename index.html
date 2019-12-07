@@ -15,81 +15,75 @@
 
     <header class="header">
       <!-- Site logo, replace with your own -->
-      <div class="navbar">
-        <a href="index.html" class="logo"><img src="img/logo.png" class="logo" alt="HTML Logo (replace this)" ></a>
-        <div class="drop-menu">
-        <button type="button">
-          <span class="material-icons">menu</span>
-        </button>
-      </div>
-      
-      
-        <!-- Search the site -->
-        <form class="searchbar"> 
-          <label>Search
-            <input type="search" name="find" id="find" class="search">
-          </label>
-          <button type="button"><span class="material-icons">search</span></button>
-        </form>  
-          <!-- Navigation menu and toggle button (example) -->
-        <nav class="mainmenu" aria-label="Primary">
-          <ul>
-            <li class="dropdown"><a href="#">Products</a>
-              <ul class="submenu">
-                <li><a href="#">Books</a></li>
-                <li><a href="#">Electronics</a></li>
-                <li><a href="#">Sports</a></li>
-                <li><a href="#">Watches</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Locations</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact and FAQ'S</a></li>
+        <div class="navbar">
+          <a href="index.html" class="logoPlace" id="logoPlace"><img src="img/logo.png" class="logo" alt=" Everest Logo"></a>
+          <div class="drop-menu">
+            <button type="button">
+              <span class="material-icons" id="menu">menu</span>
+            </button>
+          </div>
+        
+        
+          <!-- Search the site -->
+          <form class="searchbar" id="search"> 
+            <label>Search
+              <input type="search" name="find" id="find" class="search">
+            </label>
+            <button type="button"><span class="material-icons">search</span></button>
+          </form>  
+            <!-- Navigation menu and toggle button (example) -->
+          <nav class="mainmenu" id="mainmenu" aria-label="Primary">
+            <ul>
+              <li class="dropdown"><a href="#">Products</a>
+                <ul class="submenu">
+                  <li><a href="#">Books</a></li>
+                  <li><a href="#">Electronics</a></li>
+                  <li><a href="#">Sports</a></li>
+                  <li><a href="#">Watches</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact and FAQ'S</a></li>
+            </ul>
+          </nav>
+        
+            <!-- Additional functionality or links -->
+          <ul class="cart" id="cart">
+            <li><button><span class="material-icons">account_box</span></button></li>
+            <li><button><span class="material-icons">shopping_cart</span></button></li>
           </ul>
-        </nav>
-      
-          <!-- Additional functionality or links -->
-        <ul class="cart">
-          <li><button><span class="material-icons">account_box</span></button></li>
-          <li><button><span class="material-icons">shopping_cart</span></button></li>
-        </ul>
-    </div> 
+        </div> 
     </header>
 
     <main>
       <div class="responsive">
         <img src="/img/bag.png" alt="shoppingbag">
-        <div class="text-block position1">
-          <h2>Buy Gifts to your Friends and Family this Christmas</h2>
+        <div class="text-block position">
+          <p><a href="#">Buy Gifts to your Friends and Family this Christmas</a></p>
         </div>
       </div>
       <div class="responsive">
         <img src="/img/giftcard.png" alt="giftcard">
-        <div class="text-block position1">
-            <h2>Remember your Friends and Family with Everest Gift cards</h2>
+        <div class="text-block position">
+            <p><a href="#">Remember your Friends and Family with Everest Gift cards</a></p>
         </div>
       </div>
       <div class="responsive">
         <img src="img/productcollection.jpeg" alt="product Collection">
-        <div class="text-block position2">
-            <h2>Get 50% Off on exciting Products</h2>
+        <div class="text-block position">
+            <p><a href="#">Get 50% Off on exciting Products</a></p>
         </div>
       </div>
       <header>
-        <h1>Sale on <strong id="categoryName">Products</strong></h1>
+        <h1>Everest <strong id="categoryName">Products</strong></h1>
 
         <!-- Filtering product form -->
         <form>
-          <h2>Filters</h2>
-          <fieldset>
-            <label for="sort">Show</label>
-            <select name="sort" id="sort">
-              <option value="price-high">Price, highest to lowest</option>
-              <option value="price-low">Price, lowest to highest</option>
-              <option value="newest">Newest releases</option>
-            </select>
-          </fieldset>
-          <fieldset>
+            
+            <button class="filter-btn"><h2>Filter</h2></button>    
+            <div class="filter-options">
+            <fieldset>
             <legend>Colour</legend>
             <ul>
               <li><input type="checkbox" name="colour" value="black" id="black"> <label for="black">Black</label></li>
@@ -138,6 +132,15 @@
               </li>
             </ol>
           </fieldset>
+        </div>
+          <fieldset>
+              <label for="sort">Show</label>
+              <select name="sort" id="sort">
+                <option value="price-high">Price, highest to lowest</option>
+                <option value="price-low">Price, lowest to highest</option>
+                <option value="newest">Newest releases</option>
+              </select>
+            </fieldset>
         </form>
       </header>
 
