@@ -190,7 +190,9 @@ button, [type="button"], [type="submit"] {
   overflow: visible;
   cursor: pointer;
 }
-
+button:focus, input:focus, select:focus{
+  outline: none;
+}
 .clearfix:after { 
   content: " ";
   display: block;
