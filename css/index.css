@@ -1,7 +1,3 @@
-.material-icons{
-    background: transparent;
-    border:none;
-}
 /* css for header section starts */
 .header {
     background-color: #faf4f1;
@@ -21,6 +17,11 @@
 .drop-menu{
     grid-area: drop;
     padding: 0.5em 0 0 0.5em;
+}
+.drop-menu > button{
+    border:none;
+    color: red;
+    background-color: #faf4f1;
 }
 .logoPlace{
     grid-area: logo;
@@ -141,12 +142,6 @@
 .responsive img:hover{
     opacity: 0.5;
 }
-.visible{
-    display: block;
-}
-.invisible{
-    display: none;
-}
 /* css for front images ends */
 /* css for filtering starts */
 h1{
@@ -158,22 +153,34 @@ h1{
     padding: 0.25em;
 }
 h2{
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 .filter-btn{
     background-color: #eeeded;
-    margin: 0.5em;
+    margin: 0.5em 0.2em;
     padding: 0 0.5em;
     border-radius: 0.5em;
-    width: fit-content;
+    width: 99%;
 }
-.filter-btn h2::after{
-    content: " >";
+.filter-btn h2{
+    display: inline-block;
+    
+}
+.filter-btn i{
+    vertical-align: bottom;
 }
 .filter-options{
     display: none;
 }
-.filter-btn:hover ~ .filter-options{
-    display: block;
-}
 
+
+
+.visible{
+    display: block;
+    transition: display 10s;
+    /* transition-delay: 2s; */
+}
+.invisible{
+    display: none;
+    transition-duration: 10s;
+}
