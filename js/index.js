@@ -1,6 +1,6 @@
 let dropMenu = document.getElementById("menu");
 let filterBtn = document.querySelector(".filter-btn");
-// 
+
 function menuVisible()
 {
     document.getElementById("search").classList.toggle("visible");
@@ -21,6 +21,7 @@ function menuVisible()
 function filterVisible(){
     event.preventDefault();
     document.querySelector(".filter-options").classList.toggle("visible");
+    document.querySelector(".filter-btn").classList.toggle("bckgrnd-color");
     let filterBtn = document.querySelector(".filter-btn i").innerHTML;
     if (filterBtn == 'arrow_downward'){
         document.querySelector(".filter-btn i").innerHTML = 'arrow_upward';
@@ -28,7 +29,6 @@ function filterVisible(){
         document.querySelector(".filter-btn i").innerHTML = 'arrow_downward';
     }
 }
-
 
 
 
