@@ -156,7 +156,7 @@ h2{
     font-size: 1.5em;
 }
 .filter-btn{
-    background-color: #5a4e4e;
+    background-color:darkgreen ;
     margin: 0.5em 0.2em;
     padding: 0.2em 0.5em;
     border-radius: 0.5em;
@@ -167,7 +167,7 @@ h2{
     color: rgb(255, 255, 255);
 }
 .bckgrnd-color{
-    background-color: maroon;
+    background-color: #5a4e4e;
 }
 .filter-btn::after{
     content: '';
@@ -293,7 +293,7 @@ h2{
 .icon i{
     padding: 1rem 1rem;
     background: #6f727f;
-    transition: background-color 4s;
+    transition: background-color 1s;
     border-radius: 1.5em;
 }
 .f:hover{
@@ -310,7 +310,7 @@ h2{
     background-color: #0e76a8;
 }
 .y:hover{
-    background-color: #ff0000;
+    background-color: #ff0000;  
 }
 /* css for footer ends here */
 
