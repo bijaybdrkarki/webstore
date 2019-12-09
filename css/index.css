@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+body{
+    max-width: 99.99%;
+}
 /* css for header section starts */
 .header {
     background-color: #faf4f1;
@@ -187,10 +191,124 @@ h2{
 }
 .filter-options{
     display: none;
+    margin: 0.25em;
+}
+.color-size{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.1em;
+}
+.color{
+    font-size: 1.2em;
+    padding-left: 1.5em; 
+    border: 0.1em solid #333333;
+    background-image: linear-gradient(#acddde, lightyellow, #f7d8ba); 
+}
+.color ul{
+    margin-top: 0.25em;   
+}
+.size{
+    padding-left: 1.5em;
+    border: 0.1em solid #333333;
+    background-image: linear-gradient(lightblue, lightcoral , lightgreen);
+}
+.size p{
+    font-size: 1.2em;
+}
+.size ol{
+    text-align: left;
+    padding: 0;
+    margin-top: 0.5em;
+    list-style-type: none; 
+}
+.size ol li{
+    padding: 0.1em;
+}
+.size ol li label{
+    vertical-align: top;
+    
+}
+.xs{
+    font-size: 0.5em;
+    vertical-align: middle;
+   
+}
+.sm{
+    font-size: 0.75em;
+}
+.md{
+    font-size: 0.90em;
+    
+}
+.lg{
+    font-size: 1em;
+    
+}
+.xl{
+    font-size: 1.2em;
+    
+}
+.rating{
+    margin: 0.25em 0em;
+    padding: 0.25em;
+    
+    text-align: center;
+    border: 0.1em solid #333333;
+    background-image: linear-gradient(#fddfdf, #def3fd , #f0defd);
+}
+.rating p{
+    font-size: 1.2em;
+}
+.rating ol{
+    padding: 0;
+    list-style-type: none;
 }
 /* css for filter ends */
+/* css for sorting starts here */
+.sort{
+    margin-left: 0.8em;
+    font-size: 1.2em;
+    padding:0.25em
+}
+/* css for sorting ends here */
+/* css for pagination starts here */
+.page-align{
+    text-align: center;
+    padding: 1em 0;
+    background-color: #aaaaaa;
+    /* display: grid;
+    grid-template-columns: 1fr 2fr; */
+}
+.page-align p{
+    font-size: 1.1em;
+    margin: 0.5em 0;
+    font-family: 'Roboto Mono', monospace;
+}
 
+.pagination {
+    display: inline-block;
+    justify-self: center;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
 
+/* css for pagination ends here */
 /* css for footer starts here */
 .footer h6{
     font-size: 0.6em;
