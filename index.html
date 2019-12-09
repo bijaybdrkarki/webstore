@@ -86,28 +86,30 @@
             <i class="material-icons">arrow_downward</i>
           </button>    
             <div class="filter-options">
-              <fieldset>
-                <legend>Colour</legend>
-                <ul>
-                  <li><input type="checkbox" name="colour" value="black" id="black"> <label for="black">Black</label></li>
-                  <li><input type="checkbox" name="colour" value="white" id="white"> <label for="white">White</label></li>
-                  <li><input type="checkbox" name="colour" value="grey" id="grey"> <label for="grey">Grey</label></li>
-                  <li><input type="checkbox" name="colour" value="red" id="red"> <label for="red">Red</label></li>
-                  <li><input type="checkbox" name="colour" value="blue" id="blue"> <label for="blue">Blue</label></li>
-                </ul>
-              </fieldset>
-              <fieldset>
-                <legend>Sizes</legend>
-                <ol>
-                  <li><input type="checkbox" name="size" value="xs" id="xs"> <label for="xs">XS</label></li>
-                  <li><input type="checkbox" name="size" value="sm" id="sm"> <label for="sm">S</label></li>
-                  <li><input type="checkbox" name="size" value="md" id="md"> <label for="md">M</label></li>
-                  <li><input type="checkbox" name="size" value="lg" id="lg"> <label for="lg">L</label></li>
-                  <li><input type="checkbox" name="size" value="xl" id="xl"> <label for="xl">XL</label></li>
-                </ol>
-              </fieldset>
-              <fieldset>
-                <legend>Ratings (at least)</legend>
+              <div class="color-size">  
+                <fieldset class="color">
+                 <p> <legend>Colour</legend></p>
+                  <ul>
+                    <li><input type="checkbox" name="colour" value="black" id="black"> <label for="black">Black</label></li>
+                    <li><input type="checkbox" name="colour" value="white" id="white"> <label for="white">White</label></li>
+                    <li><input type="checkbox" name="colour" value="grey" id="grey"> <label for="grey">Grey</label></li>
+                    <li><input type="checkbox" name="colour" value="red" id="red"> <label for="red">Red</label></li>
+                    <li><input type="checkbox" name="colour" value="blue" id="blue"> <label for="blue">Blue</label></li>
+                  </ul>
+                </fieldset>
+                <fieldset class="size">
+                  <p><legend>Sizes</legend></p>
+                  <ol>
+                    <li><input type="checkbox" name="size" value="xs" id="xs"> <label class="xs" for="xs">XS</label></li>
+                    <li><input type="checkbox" name="size" value="sm" id="sm"> <label class="sm" for="sm">S</label></li>
+                    <li><input type="checkbox" name="size" value="md" id="md"> <label class="md" for="md">M</label></li>
+                    <li><input type="checkbox" name="size" value="lg" id="lg"> <label class="lg" for="lg">L</label></li>
+                    <li><input type="checkbox" name="size" value="xl" id="xl"> <label class="xl" for="xl">XL</label></li>
+                  </ol>
+                </fieldset>
+              </div>
+              <fieldset class="rating">
+                <p><legend>Ratings (at least)</legend></p>
                 <ol>
                   <li>
                     <input type="radio" name="rating" value="4" id="aboveFour">
@@ -136,7 +138,7 @@
                 </ol>
               </fieldset>
             </div>
-          <fieldset>
+          <fieldset class="sort">
               <label for="sort">Show</label>
               <select name="sort" id="sort">
                 <option value="price-high">Price, highest to lowest</option>
@@ -349,36 +351,18 @@
         </div>
       </section>
 
-      <div>
+      <div class="page-align">
         <p>1-5 of 20 products found</p>
-        <nav aria-label="Product Pages">
-          <a href="#" aria-label="Previous page">prev</a>
-          <ol>
-            <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
-            <li><a href="#" aria-label="Page 2">2</a></li>
-            <li><a href="#" aria-label="Page 3">3</a></li>
-            <li><a href="#" aria-label="Page 4">4</a></li>
-          </ol>
-          <a href="#" aria-label="Next page">next</a>
+        <nav aria-label="Product Pages" class="pagination">
+          <a href="#" aria-label="Previous page">&laquo;</a>
+          <a href="#" class="active" aria-label="Current Page, Page 1" aria-current="true">1</a>
+          <a href="#" aria-label="Page 2">2</a>
+          <a href="#" aria-label="Page 3">3</a>
+          <a href="#" aria-label="Page 4">4</a>
+          <a href="#" aria-label="Next page">&raquo;</a>
         </nav>
       </div>
     </main>
-
-    <!-- <footer>
-      <p>&copy; Copyright, 1991.</p>
-      <nav aria-label="Legal">
-        <ul>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Accessibility Policy</a></li>
-        </ul>
-      </nav>
-      <ul>
-        <li><a href="#"><span class="material-icons">face</span> Facebook</a></li>
-        <li><a href="#"><span class="material-icons">camera_alt</span> Instagram</a></li>
-        <li><a href="#"><span class="material-icons">alternate_email</span> Twitter</a></li>
-      </ul>
-    </footer> -->
     <footer class="footer">
       <div class="foot-align">
           <div>
