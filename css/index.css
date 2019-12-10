@@ -146,6 +146,10 @@ body{
 .responsive img:hover{
     opacity: 0.5;
 }
+.everest{
+    border-top: 0.2em solid #111111;
+    margin-bottom: 0.5em;
+}
 /* css for front images ends */
 /* css for filtering starts */
 h1{
@@ -271,6 +275,19 @@ h2{
     padding:0.25em
 }
 /* css for sorting ends here */
+/* css for product display starts here */
+.result{
+    margin-left: 0.5em;
+}
+.product{
+    margin: 0.5em 0.5em;
+    border: 0.1em solid #222222;
+    padding: 0.25em;
+}
+
+
+
+/* css for product display ends here */
 /* css for pagination starts here */
 .page-align{
     text-align: center;
