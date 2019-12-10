@@ -1,5 +1,9 @@
 let dropMenu = document.getElementById("menu");
 let filterBtn = document.querySelector(".filter-btn");
+let seeMore = document.querySelectorAll(".extra-info");
+
+
+
 
 function menuVisible()
 {
@@ -29,6 +33,15 @@ function filterVisible(){
         document.querySelector(".filter-btn i").innerHTML = 'arrow_downward';
     }
 }
+
+seeMore.foreach(item => {
+    item.addEventListener("click", event =>{
+        event.preventDefault();
+        
+    })
+});
+
+
 
 
 
