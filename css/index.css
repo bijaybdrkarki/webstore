@@ -205,6 +205,7 @@ h2{
 .color{
     font-size: 1.2em;
     padding-left: 1.5em; 
+    padding-top: 0.25em;
     border: 0.1em solid #333333;
     background-image: linear-gradient(#acddde, lightyellow, #f7d8ba); 
 }
@@ -213,6 +214,7 @@ h2{
 }
 .size{
     padding-left: 1.5em;
+    padding-top: 0.25em;
     border: 0.1em solid #333333;
     background-image: linear-gradient(lightblue, lightcoral , lightgreen);
 }
@@ -222,20 +224,18 @@ h2{
 .size ol{
     text-align: left;
     padding: 0;
-    margin-top: 0.5em;
+    margin-top: 0.25em;
     list-style-type: none; 
 }
 .size ol li{
     padding: 0.1em;
 }
 .size ol li label{
-    vertical-align: top;
+    vertical-align: -webkit-baseline;
     
 }
 .xs{
     font-size: 0.5em;
-    vertical-align: middle;
-   
 }
 .sm{
     font-size: 0.75em;
@@ -284,9 +284,76 @@ h2{
     border: 0.1em solid #222222;
     padding: 0.25em;
 }
+.name-price{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.name-price data{
+    margin: 0.15em 0.15em;
+    padding:0.25em;
+    color: maroon;
+    font-size: 1.25em;
+    width: fit-content;
+    border-radius: 0.25em;
+    background-color: #5997b4;
+    justify-self: end;
+}
+.name-price data ins{
+    text-decoration: none;
+}
+.name-price h3{
+    font-size: 1.5em;
+    margin: 0.25em 0;
+}
+.prod-color,.prod-size{
+    margin: 1em 0;
+}
+.prod-color ul li{
+    display: inline;   
+}
+.prod-size ol{
+    padding-left: 0em;
+}
+.prod-size ol li{
+    display: inline;
+}
+.prod-footer dl{
+    display: grid;
+    grid-template-columns: 0.30fr 3fr 0.5fr;
+    grid-template-areas: "test test test" 
+                         "valu star love";
+}
+.prod-footer dl dt{
+    grid-area: test;
+}
+.prod-footer dl dd{
+    grid-area: valu;
+    padding:0.25em;
+    /* text-align: right; */
+}
+.prod-footer dl div{
+    grid-area: star;
+}
+.fav-color{
+    color:red;
+    grid-area: love;
+    border: none; 
+    background: none;  
+}
+.add-to-cart{
+    padding: 0.15em;
+    font-size: 1.2em;
+    margin: 1em 0 0.5em 0;
+    background-color: lightgoldenrodyellow;
+}
+.add-to-cart span{
+    vertical-align: middle;
+}
+.see-more p{
+    display: inline;
+}
 
-
-
+   
 /* css for product display ends here */
 /* css for pagination starts here */
 .page-align{
