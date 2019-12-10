@@ -352,6 +352,17 @@ h2{
 .see-more p{
     display: inline;
 }
+.changeQuantity {
+    display: block;
+    margin-top: 1em;
+}
+.minusbutton, .quantity, .plusbutton, .total-price{
+    display: inline;
+    padding: 0 0.25em;
+}
+.total-price{
+    font-size: 1.3em;
+}
 
    
 /* css for product display ends here */
@@ -454,6 +465,9 @@ h2{
     height: 2em;
     min-width: 1.9em;
     display: none;
+}
+.apple:hover .appleicon{
+    color: black;
 }
 .google:hover .googleIcon{
     display: none;
