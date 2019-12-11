@@ -319,7 +319,7 @@ h2{
 }
 .prod-footer dl{
     display: grid;
-    grid-template-columns: 0.30fr 3fr 0.5fr;
+    grid-template-columns: 0.30fr 3fr 0.3fr;
     grid-template-areas: "test test test" 
                          "valu star love";
 }
@@ -334,11 +334,14 @@ h2{
 .prod-footer dl div{
     grid-area: star;
 }
-.fav-color{
+.fav-color, .fav{
     color:red;
     grid-area: love;
     border: none; 
     background: none;  
+}
+.but{
+    width: fit-content;
 }
 .add-to-cart{
     padding: 0.15em;
