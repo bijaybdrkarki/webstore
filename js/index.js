@@ -2,72 +2,91 @@
 const allproducts = [
   {
     id : 1,
-    name : `Iphone 11`,
-    image : `img/iphone-11-pro.jpg`,
+    name : `Winter Jackets`,
+    image : `img/jackets.jpg`,
     description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
     extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
-    markedPrice: 1750.00,
-    discountedPrice : 1600.00,
+    markedPrice: 150.00,
+    discountedPrice : 100.00,
     quantityStock : 10,
-    category : `electronics`,
+    category : `clothes`,
+    rating: 3,
     size: ['XS', 'S' , 'M', 'L', 'XL'],
     color: ['Black', 'White', 'Grey', 'Red', 'Blue']
   },
   {
     id : 2,
-    name : `Macbook Pro`,
-    image : `img/macbook.jpg`,
+    name : `Summer Jacket`,
+    image : `img/windproof.jpg`,
     description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
     extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
-    markedPrice: 40.00,
-    discountedPrice : 29.00,
+    markedPrice: 80.00,
+    discountedPrice : 69.00,
     quantityStock : 5,
-    category : `electronics`,
+    category : `clothes`,
+    rating: 4.4,
     size: ['XS', 'S' , 'M', 'L', 'XL'],
     color: ['Black', 'White', 'Grey', 'Red', 'Blue']
   },
   {
       id : 3,
-      name : `Google Pixel`,
-      image : `img/google-pixel.jpg`,
+      name : `Tshirt-Lazy`,
+      image : `img/lazy-tshirt.jpg`,
       description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
       extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
-      markedPrice: 1440.00,
-      discountedPrice : 1329.00,
+      markedPrice: 18.00,
+      discountedPrice : 12.00,
       quantityStock : 5,
-      category : `electronics`,
+      category : `clothes`,
+      rating: 5,
       size: ['XS', 'S' , 'M', 'L', 'XL'],
       color: ['Black', 'White', 'Grey', 'Red', 'Blue']
   },
   {
     id : 4,
-    name : `Samsung Galaxy`,
-    image : `img/samsung-galaxy-s10.jpg`,
+    name : `Tshirt`,
+    image : `img/tshirt.jpg`,
     description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
     extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
-    markedPrice: 1375.00,
-    discountedPrice : 1200.00,
+    markedPrice: 13.75,
+    discountedPrice : 10.00,
     quantityStock : 5,
-    category : `electronics`,
+    category : `clothes`,
+    rating: 3,
     size: ['XS', 'S' , 'M', 'L', 'XL'],
     color: ['Black', 'White', 'Grey', 'Red', 'Blue']
   },
   {
     id : 5,
-    name : `Windows Laptop`,
-    image : `img/laptop.jpg`,
+    name : `Full-sleve Shirt`,
+    image : `img/mens-plain-shirts.jpg`,
     description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
     extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
-    markedPrice: 1000.00,
-    discountedPrice : 875.00,
+    markedPrice: 25.00,
+    discountedPrice : 15.00,
     quantityStock : 5,
-    category : `electronics`,
+    category : `clothes`,
+    rating: 2.5,
     size: ['XS', 'S' , 'M', 'L', 'XL'],
     color: ['Black', 'White', 'Grey', 'Red', 'Blue']
   },
 ];
+function getRatingAsString(rating)
+{
+  let star='<div>';
+  for(let i=1 ; i<= rating; i++)
+  {
+     star += '<span class="material-icons">star</span>';
+  }
+  if (rating !== Math.ceil(rating)){
+    star+= '<span class="material-icons">star_half</span>';
+  }
+  star+='</div>';
+  return star;
+}
 
-function getProductsAsString(product){
+function getProductsAsString(product)
+{
     return `<article class="product">
     <header>
       <img src="${product.image}" alt="Product Image">
@@ -108,14 +127,8 @@ function getProductsAsString(product){
       <footer class="prod-footer">
         <dl>
           <dt>Rating</dt>
-          <dd>4.4 </dd>
-          <div>
-            <span class="material-icons">star</span>
-            <span class="material-icons">star</span>
-            <span class="material-icons">star</span>
-            <span class="material-icons">star</span>
-            <span class="material-icons">star_half</span>
-          </div>
+          <dd>${product.rating}</dd>
+          ${getRatingAsString(product.rating)}
           <button type="button" class="fav but"><span class="material-icons fav-color">favorite_border</span></button>
         </dl>
         <div class="changeQuantity">
@@ -133,6 +146,7 @@ function getProductsAsString(product){
     </form>
   </article>`
 }
+
 function renderProductsFromArray(array)
 {
   document.getElementById("products").innerHTML = array.map(getProductsAsString).join('\n');
@@ -147,6 +161,30 @@ function renderProductsFromArray(array)
   seeMore.forEach(item => item.addEventListener("click", showMore));
 
 }
+
+function sortTheProducts() /* sort the array according to sorting selected */
+{
+ let sortby = document.getElementById("sort").value;
+ const sortedArray = allproducts.slice();
+ if (sortby == 'price-high')
+ {
+    sortedArray.sort((a,b) => b.discountedPrice - a.discountedPrice);
+ }
+ else if (sortby == 'price-low')
+ {
+  sortedArray.sort((a,b) => a.discountedPrice - b.discountedPrice);
+ }
+ else if (sortby == 'AtoZ')
+ {
+  sortedArray.sort((a,b) => a.name.localeCompare(b.name));
+ }
+ else if (sortby == 'ZtoA')
+ {
+  sortedArray.sort((a,b) => b.name.localeCompare(a.name));
+ }
+ renderProductsFromArray(sortedArray) ;
+}
+// function categoriesBy
 function menuVisible() /* show menu on click in mobile version */
 {
     document.getElementById("search").classList.toggle("visible");
@@ -179,7 +217,6 @@ function filterVisible() /* show filter options on click in mobile version */
 function showMore(event) /* show product more info onclick in all version */
 {
     event.preventDefault();
-    console.log('clicked')
     event.target.parentElement.children[3].classList.toggle("invisible");
     if(event.target.parentElement.children[1].innerText == 'See more'){
         event.target.parentElement.children[1].innerText = 'Read less'
@@ -218,22 +255,6 @@ function minusPrice(event) /* decrease quantity by 1 onclick  */
     event.target.parentElement.children[1].innerHTML= qnt;
     let total= qnt * price;
     event.target.parentElement.children[3].innerHTML = `$ ${total.toFixed(2)}`;
-}
-function sortTheProducts()
-{
- let sortby = document.getElementById("sort").value;
- const sortedArray = allproducts.slice();
- if (sortby == 'price-high')
- {
-    console.log("high");
-    sortedArray.sort((a,b) => b.discountedPrice - a.discountedPrice);
- }
- else if (sortby == 'price-low')
- {
-  console.log("low");
-  sortedArray.sort((a,b) => a.discountedPrice - b.discountedPrice);
- }
- renderProductsFromArray(sortedArray) ;
 }
 
 window.addEventListener("load", ()=> {
