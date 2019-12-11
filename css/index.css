@@ -286,7 +286,7 @@ h2{
 }
 .name-price{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
 }
 .name-price data{
     margin: 0.15em 0.15em;
@@ -357,14 +357,23 @@ h2{
 }
 .changeQuantity {
     display: block;
-    margin-top: 1em;
+    padding: 0.3em;
+    background-color: lightblue;
+    /* color: white; */
+    width: fit-content
+    /* margin-top: 1em;
+    margin-bottom: 0.25em; */
 }
 .minusbutton, .quantity, .plusbutton, .total-price{
-    display: inline;
+    display: inline-block;
     padding: 0 0.25em;
+}
+.minusbutton, .plusbutton{
+    border: 0.01em solid black;
 }
 .total-price{
     font-size: 1.3em;
+    vertical-align: bottom;
 }
 
    
