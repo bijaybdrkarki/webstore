@@ -1,31 +1,70 @@
 // All data
 const allproducts = [
-    {
-       id : 1,
-       name : `Product 1`,
-       image : `img/product.jpg`,
-       description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-       extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
-       markedPrice: 50.00,
-       discountedPrice : 39.00,
-       quantityStock : 10,
-       category : `book`,
-       size: ['XS', 'S' , 'M', 'L', 'XL'],
-       color: ['Black', 'White', 'Grey', 'Red', 'Blue']
-    },
-    {
-        id : 2,
-        name : `Product 2`,
-        image : `img/macbook.jpg`,
-        description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
-        extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
-        markedPrice: 40.00,
-        discountedPrice : 29.00,
-        quantityStock : 5,
-        category : `Electronics`,
-        size: ['XS', 'S' , 'M', 'L', 'XL'],
-        color: ['Black', 'White', 'Grey', 'Red', 'Blue']
-     },
+  {
+    id : 1,
+    name : `Iphone 11`,
+    image : `img/iphone-11-pro.jpg`,
+    description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+    extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
+    markedPrice: 1750.00,
+    discountedPrice : 1600.00,
+    quantityStock : 10,
+    category : `electronics`,
+    size: ['XS', 'S' , 'M', 'L', 'XL'],
+    color: ['Black', 'White', 'Grey', 'Red', 'Blue']
+  },
+  {
+    id : 2,
+    name : `Macbook Pro`,
+    image : `img/macbook.jpg`,
+    description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+    extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
+    markedPrice: 40.00,
+    discountedPrice : 29.00,
+    quantityStock : 5,
+    category : `electronics`,
+    size: ['XS', 'S' , 'M', 'L', 'XL'],
+    color: ['Black', 'White', 'Grey', 'Red', 'Blue']
+  },
+  {
+      id : 3,
+      name : `Google Pixel`,
+      image : `img/google-pixel.jpg`,
+      description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+      extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
+      markedPrice: 1440.00,
+      discountedPrice : 1329.00,
+      quantityStock : 5,
+      category : `electronics`,
+      size: ['XS', 'S' , 'M', 'L', 'XL'],
+      color: ['Black', 'White', 'Grey', 'Red', 'Blue']
+  },
+  {
+    id : 4,
+    name : `Samsung Galaxy`,
+    image : `img/samsung-galaxy-s10.jpg`,
+    description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+    extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
+    markedPrice: 1375.00,
+    discountedPrice : 1200.00,
+    quantityStock : 5,
+    category : `electronics`,
+    size: ['XS', 'S' , 'M', 'L', 'XL'],
+    color: ['Black', 'White', 'Grey', 'Red', 'Blue']
+  },
+  {
+    id : 5,
+    name : `Windows Laptop`,
+    image : `img/laptop.jpg`,
+    description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+    extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
+    markedPrice: 1000.00,
+    discountedPrice : 875.00,
+    quantityStock : 5,
+    category : `electronics`,
+    size: ['XS', 'S' , 'M', 'L', 'XL'],
+    color: ['Black', 'White', 'Grey', 'Red', 'Blue']
+  },
 ];
 
 function getProductsAsString(product){
