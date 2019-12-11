@@ -37,8 +37,8 @@
             <ul>
               <li class="dropdown"><a href="#">Products</a>
                 <ul class="submenu">
-                  <li><a href="#">Books</a></li>
-                  <li><a href="#">Electronics</a></li>
+                  <li><a href="#">Clothes</a></li>
+                  <li><a href="#">Shoes</a></li>
                   <li><a href="#">Sports</a></li>
                   <li><a href="#">Watches</a></li>
                 </ul>
@@ -145,7 +145,18 @@
                 <option value="none" disabled selected> -- Sort by -- </option>
                 <option value="price-high">Price, highest to lowest</option>
                 <option value="price-low">Price, lowest to highest</option>
-                <option value="newest">Newest releases</option>
+                <option value="AtoZ">A to Z</option>
+                <option value="ZtoA">Z to A</option>
+              </select>
+            </fieldset>
+            <fieldset class="categ">
+              <label for="categ">Categories</label>
+              <select name="categ" id="categ">
+                <option value="none" disabled selected> -- categories by -- </option>
+                <option value="clothes">clothes</option>
+                <option value="shoes">shoes</option>
+                <option value="sports">sports</option>
+                <option value="watches">watches</option>
               </select>
             </fieldset>
         </form>
