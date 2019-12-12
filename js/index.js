@@ -1,5 +1,6 @@
-// All data
-const allproducts = [
+
+const allproducts = // All products data
+[ 
   {
     id : 1,
     name : `Winter Jackets`,
@@ -99,7 +100,7 @@ const allproducts = [
     color: ['Black', 'White', 'Grey', 'Red', 'Blue']
   },
 ];
-function getRatingAsString(rating)
+function getRatingAsString(rating) /* gives star rating symbol on each product based on rating value of each product  */
 {
   let star='<div>';
   for(let i=1 ; i<= rating; i++)
@@ -113,7 +114,7 @@ function getRatingAsString(rating)
   return star;
 }
 
-function getProductsAsString(product)
+function getProductsAsString(product) /* returns all products as a string of HTML to render on page */
 {
     return `<article class="product">
     <header>
@@ -379,7 +380,7 @@ function minusPrice(event) /* decrease quantity by 1 onclick  */
     let total= qnt * price;
     event.target.parentElement.children[3].innerHTML = `$ ${total.toFixed(2)}`;
 }
-function displayPaginationAsString(numOfProducts, productsLength, pageNum)
+function displayPaginationAsString(numOfProducts, productsLength, pageNum)/* display pagination dynamically based on number of products */
 { 
   let page = parseInt(pageNum);
   let numOfPages = Math.ceil(numOfProducts/productsLength);
@@ -397,7 +398,7 @@ return pagination;
 }
 
 
-function PaginationFirstString(productsLength, page)
+function PaginationFirstString(productsLength, page) /* change pagination string if next page is clicked  */
 {
   
   if (productsLength== 1 || productsLength == 6 || productsLength == 11 || productsLength == 16)
@@ -409,7 +410,7 @@ function PaginationFirstString(productsLength, page)
    return  `${page} - ${productsLength}`;
   }
 }
-function submitTheSearchForm(e)
+function submitTheSearchForm(e) /* all products that matches (based on name and price) to term searched in search filed are returned as array */
 {
   
   const filteredProducts = allproducts.filter(p => p.name.toLowerCase().includes(e.target.value) || p.discountedPrice <= (parseFloat(e.target.value)))
@@ -420,24 +421,24 @@ function submitTheSearchForm(e)
 }
 
 
-window.addEventListener("load", ()=> {
+window.addEventListener("load", ()=> { /* things to be done when page is loaded */
     let dropMenu = document.getElementById("menu");
     let filterBtn = document.querySelector(".filter-btn");
     let sort = document.getElementById("sort");
-    let categorizedArray= allproducts;
+    let categorizedArray= allproducts; //by default category is all
     let arrayToDisplay = [];
-    renderProductsFromArray(allproducts); 
+    renderProductsFromArray(allproducts); // displays all products on first render
    
    document.getElementById("find").addEventListener("input", (e) => {
       arrayToDisplay = submitTheSearchForm(e);
-      renderProductsFromArray(arrayToDisplay)
+      renderProductsFromArray(arrayToDisplay) // display the product array after product is matched to term typed in search field
    });
 
 
    document.getElementById("categ").addEventListener("change", ()=> {
      arrayToDisplay = categoriesBy(allproducts);
      renderProductsFromArray(arrayToDisplay); 
-     categorizedArray = arrayToDisplay;
+     categorizedArray = arrayToDisplay; 
      // listen to category change event
    // receive the categorized array
    // render the array to page
@@ -445,7 +446,7 @@ window.addEventListener("load", ()=> {
    });  
     
     sort.addEventListener("change", () => {
-      arrayToDisplay = sortTheProducts(categorizedArray);
+      arrayToDisplay = sortTheProducts(categorizedArray); // by default sorting works for allproducts, if categoried than sorting works for categoried array 
       renderProductsFromArray(arrayToDisplay);
     });
     // sort.addEventListener("change", sortTheProducts);
