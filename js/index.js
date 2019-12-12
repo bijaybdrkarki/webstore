@@ -581,7 +581,12 @@ function displayPaginationAsString(numOfProducts, productsLength, pageNum)/* dis
 pagination+= `<a href="#" aria-label="Next page">&raquo;</a>`;
 return pagination;
 }
-
+function showSearchIcon(e){
+  console.log(e.target.parentElement.parentElement);
+  (e.target.parentElement.parentElement.children[0].classList.toggle('visible'));
+  (e.target.parentElement.parentElement.children[0].children[0].classList.toggle('srchIntables'));
+  // console.log(e.target.parentElement.parentElement.children[0].classList);
+}
 
 function PaginationFirstString(productsLength, page) /* change pagination string if next page is clicked  */
 {
@@ -609,6 +614,7 @@ function submitTheSearchForm(e) /* all products that matches (based on name and 
 window.addEventListener("load", ()=> { /* things to be done when page is loaded */
     let dropMenu = document.getElementById("menu");
     let filterBtn = document.querySelector(".filter-btn");
+    let srchicon =document.getElementById("srchicon");
     let sort = document.getElementById("sort");
     let categorizedArray= allproducts; //by default category is all
     let arrayToDisplay = [];
@@ -637,5 +643,6 @@ window.addEventListener("load", ()=> { /* things to be done when page is loaded 
     // sort.addEventListener("change", sortTheProducts);
     filterBtn.addEventListener("click",filterVisible);
     dropMenu.addEventListener("click", menuVisible);
+    srchicon.addEventListener("click", showSearchIcon);
 });
 

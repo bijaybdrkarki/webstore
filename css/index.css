@@ -621,7 +621,7 @@ h2{
         grid-area: srch;
         text-align: center;
     }
-    .srchicon:hover .search, .srchicon:hover .searchbar label{
+    .srchIntablet{
         display: block;
         position: absolute;
         right:3em;
