@@ -16,7 +16,7 @@ body{
     grid-template-columns: 2em  auto  4.5em;
     grid-template-areas:  "drop logo cart"
                             "srch srch srch"
-                            "menu menu menu";
+                            "men men men";
 }
 .drop-menu{
     grid-area: drop;
@@ -59,13 +59,14 @@ body{
     border-radius: 0.5em;
     color: #aaaaaa;
 }
-.mainmenu{
-    grid-area: menu;
+.mainmenu
+{
+    grid-area: men;
     display: none;
     text-align: left;
     padding-left: 1em;
-  }
-    .mainmenu a {
+}
+    .mainmenu a{
       display: block;
       color: #111;
       text-decoration: none;
@@ -137,7 +138,7 @@ body{
     display: block;
    width:100%;
    max-width: 25em;
-    max-height: 25em;
+   min-height: 20em;
    margin-right: auto;
    margin-left: auto;
    border: solid 0.1em black;
@@ -145,6 +146,9 @@ body{
 }
 .responsive img:hover{
     opacity: 0.5;
+}
+.gif{
+    display: none;
 }
 .everest{
     border-top: 0.2em solid #111111;
@@ -269,7 +273,7 @@ h2{
 }
 /* css for filter ends */
 /* css for sorting starts here */
-.sort{
+.sort, .categ{
     margin-left: 0.8em;
     font-size: 1.2em;
     padding:0.25em
@@ -550,4 +554,98 @@ h2{
 }
 .invisible{
     display: none;   
+}
+
+/* media quries  starts here*/
+
+@media screen and (min-width: 650px) {
+    .navbar{
+        grid-template-columns: 9em auto 2em 4.2em;
+        grid-template-areas: "logo men srch cart";
+    }
+    .drop-menu{
+        display: none;
+    }
+    .logoPlace{
+        text-align: left;
+    }
+    .cart{
+        padding: 0;
+    }
+    .cart li > button{
+        font-size: 2.2em;
+        color: red;
+        background-color: #faf4f1;
+        border:none
+    }
+    .mainmenu
+    {
+        padding-left: 0;
+        display: block;
+        /* display: flex; */
+        /* justify-content: space-around; */
+    }
+    .mainmenu > ul{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .submenu{
+        position: absolute;
+        left: auto;
+        top: 2em;
+        padding-left: 0.25em;
+        width: 50%;
+    }
+    .dropdown:hover .submenu{
+        display: flex;
+        justify-content: space-between;
+    }
+    .searchbar{
+        display: block;
+        padding: 0.5em 0;
+        position: relative;
+        
+    }
+    .searchbar button{
+        border:none;
+        background: none;
+        position: relative;
+    }
+    .search, .searchbar label{
+        display: none;  
+    }
+    .srchicon
+    {
+        display: block;
+        grid-area: srch;
+        text-align: center;
+    }
+    .srchicon:hover .search, .srchicon:hover .searchbar label{
+        display: block;
+        position: absolute;
+        right:3em;
+        top: 2em;  
+        z-index: 1;
+    }
+    .topimg{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .gif{
+        display: block;
+    }
+    .sort-categ{
+        display: flex;
+        justify-content: space-around;
+    }
+    .foot-align{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .apple-google{
+        display: grid;
+     grid-template-columns: 4fr 5fr 5fr 4fr;       
+    }
+    
 }
