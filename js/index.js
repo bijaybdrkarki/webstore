@@ -258,7 +258,7 @@ function sortTheProducts(toDisplay) /* sort the array according to sorting selec
  {
   sortedArray.sort((a,b) => b.name.localeCompare(a.name));
  }
- renderProductsFromArray(sortedArray) ;
+ return(sortedArray) ;
 }
 function categoriesBy(array) /* categories allproducts on basis of each caategories */
 {
@@ -424,7 +424,8 @@ window.addEventListener("load", ()=> {
     let dropMenu = document.getElementById("menu");
     let filterBtn = document.querySelector(".filter-btn");
     let sort = document.getElementById("sort");
-    let arrayToDisplay;
+    let categorizedArray= allproducts;
+    let arrayToDisplay = [];
     renderProductsFromArray(allproducts); 
    
    document.getElementById("find").addEventListener("input", (e) => {
@@ -436,13 +437,17 @@ window.addEventListener("load", ()=> {
    document.getElementById("categ").addEventListener("change", ()=> {
      arrayToDisplay = categoriesBy(allproducts);
      renderProductsFromArray(arrayToDisplay); 
+     categorizedArray = arrayToDisplay;
      // listen to category change event
    // receive the categorized array
    // render the array to page
    // render back the page view
-   })  
+   });  
     
-    sort.addEventListener("change", () => sortTheProducts(arrayToDisplay));
+    sort.addEventListener("change", () => {
+      arrayToDisplay = sortTheProducts(categorizedArray);
+      renderProductsFromArray(arrayToDisplay);
+    });
     // sort.addEventListener("change", sortTheProducts);
     filterBtn.addEventListener("click",filterVisible);
     dropMenu.addEventListener("click", menuVisible);
