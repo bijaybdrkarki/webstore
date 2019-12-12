@@ -639,13 +639,60 @@ h2{
         display: flex;
         justify-content: space-around;
     }
+    #products{
+         display: grid;
+         grid-template-columns: 1fr 1fr;   
+    }
+    .product{
+        margin: 0.25em 0.15em;
+    }
     .foot-align{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
     .apple-google{
         display: grid;
-     grid-template-columns: 4fr 5fr 5fr 4fr;       
+     grid-template-columns: auto 10em 10em auto;
+     grid-gap: 0.5em;       
     }
     
+}
+@media screen and (min-width: 1200px) {
+    body{
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .navbar{
+        grid-template-columns: 9em auto 16em 4.2em;
+        grid-template-areas: "logo men srch cart";
+    }
+    .search, .searchbar label{
+        display: inline-block;  
+    }
+    .topimg{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .gif{
+        display: none;
+    }
+    #products{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }   
+    .foot-align{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-bottom: 1em;
+    }
+    .responsive-icon{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .apple-google{
+        grid-template-columns: auto 10em 10em;
+    }
+    .icon{
+        margin-left: 1em;
+    }
 }
