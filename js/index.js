@@ -213,8 +213,8 @@ const allproducts = // All products data
   },
   {
     id : 16,
-    name : `Footbal Boots`,
-    image : `img/Footbal-Boots.jpg`,
+    name : `Football Boots`,
+    image : `img/Football-Boots.jpg`,
     description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
     extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
     markedPrice: 135.00,
@@ -227,7 +227,7 @@ const allproducts = // All products data
   },
   {
     id : 17,
-    name : `P.League Footbal`,
+    name : `P.League Football`,
     image : `img/football.jpg`,
     description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
     extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
