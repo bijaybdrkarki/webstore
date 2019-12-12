@@ -70,6 +70,34 @@ const allproducts = [
     size: ['XS', 'S' , 'M', 'L', 'XL'],
     color: ['Black', 'White', 'Grey', 'Red', 'Blue']
   },
+  {
+    id : 6,
+    name : `Men-Causal`,
+    image : `img/men-casual.jpg`,
+    description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+    extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
+    markedPrice: 22.00,
+    discountedPrice : 15.00,
+    quantityStock : 5,
+    category : `shoes`,
+    rating: 3.5,
+    size: ['XS', 'S' , 'M', 'L', 'XL'],
+    color: ['Black', 'White', 'Grey', 'Red', 'Blue']
+  },
+  {
+    id : 7,
+    name : `Leather-shoes`,
+    image : `img/Leather-Men-Shoes.jpg`,
+    description : `Here is a shot of this product that might entice a user to click and add it to their cart.`,
+    extra: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil nobis dolorem ea aliquid, aspernatur non commodi deserunt dolorum atque a incidunt, pariatur ipsa, accusantium temporibus. Corporis asperiores tenetur deserunt nisi?`,
+    markedPrice: 52.00,
+    discountedPrice : 35.00,
+    quantityStock : 5,
+    category : `shoes`,
+    rating: 4,
+    size: ['XS', 'S' , 'M', 'L', 'XL'],
+    color: ['Black', 'White', 'Grey', 'Red', 'Blue']
+  },
 ];
 function getRatingAsString(rating)
 {
@@ -147,7 +175,8 @@ function getProductsAsString(product)
   </article>`
 }
 
-function renderProductsFromArray(array)
+
+function displayProducts(array) /* show(print) products on page */
 {
   document.getElementById("products").innerHTML = array.map(getProductsAsString).join('\n');
   let seeMore = document.querySelectorAll(".extra-info");
@@ -159,13 +188,60 @@ function renderProductsFromArray(array)
   plusBtn.forEach(btn => btn.addEventListener("click", plusPrice));
   favBtn.forEach(btn => btn.addEventListener("click", favbtnclick));
   seeMore.forEach(item => item.addEventListener("click", showMore));
-
 }
 
-function sortTheProducts() /* sort the array according to sorting selected */
+
+function renderProductsFromArray(array) /* displays products on page */
+{
+  // if array size is less than 5 display all in one page and display pagination
+  if (array.length <= 5){
+    displayProducts(array);
+    let pageNum = 1;
+    document.getElementById("pagination").innerHTML= displayPaginationAsString(array.length, array.length, pageNum);
+  }
+  //if array size is bigger than 5 display first 5 in one page and listen to other pages clicked
+  else if (array.length > 5){ 
+    displayProducts(array.slice(0,5));
+    let pageNum = 1;
+    document.getElementById("pagination").innerHTML= displayPaginationAsString(array.length, array.slice(0,5).length, pageNum);
+    listenPageClicked(array);
+  }
+}
+function listenPageClicked (array) /* listen to pagination clicked if there are more tham 5 products to display */
+{
+  document.querySelectorAll(".pageNum").forEach(p => p.addEventListener(`click`, (e) => {
+   let arrayToDisplay=[];
+    e.preventDefault();
+    if (e.target.dataset.value == '1')
+    {
+       arrayToDisplay = (array.slice(0, 5));
+       document.querySelector(".productString").innerHTML = PaginationFirstString(arrayToDisplay.length, 1);
+    }
+    else if (e.target.dataset.value == '2')
+    {
+      arrayToDisplay = array.slice(5,10);
+      document.querySelector(".productString").innerHTML = PaginationFirstString(arrayToDisplay.length+5, 6);
+    }
+    else if(e.target.dataset.value == '3')
+    {
+      arrayToDisplay = array.slice(10,15);
+      document.querySelector(".productString").innerHTML = PaginationFirstString(arrayToDisplay.length+10, 11);
+    }
+    else if (e.target.dataset.value == '4')
+    {
+      arrayToDisplay = array.slice(15,20);
+      document.querySelector(".productString").innerHTML = PaginationFirstString(arrayToDisplay.length+15, 16);
+    }
+    displayProducts(arrayToDisplay);
+    document.querySelector('.active').classList.toggle("active");
+       e.target.classList.toggle("active");
+  }));
+}
+
+function sortTheProducts(toDisplay) /* sort the array according to sorting selected */
 {
  let sortby = document.getElementById("sort").value;
- const sortedArray = allproducts.slice();
+ const sortedArray = toDisplay.slice();
  if (sortby == 'price-high')
  {
     sortedArray.sort((a,b) => b.discountedPrice - a.discountedPrice);
@@ -184,7 +260,54 @@ function sortTheProducts() /* sort the array according to sorting selected */
  }
  renderProductsFromArray(sortedArray) ;
 }
-// function categoriesBy
+function categoriesBy(array) /* categories allproducts on basis of each caategories */
+{
+  let catby = document.getElementById("categ").value;
+  const Arraycopy = array.slice();
+  let categArray=[];
+  if (catby == 'clothes')
+  {
+     for(let i=0; i< Arraycopy.length; i++ )
+     {  
+       
+       if (Arraycopy[i].category == 'clothes')
+       {
+         categArray.push(Arraycopy[i]);
+       }
+     }
+  }
+  else if (catby == 'shoes')
+  {
+    for(let i=0; i<Arraycopy.length; i++ )
+    {
+      if (Arraycopy[i].category == 'shoes')
+      {
+        categArray.push(Arraycopy[i]);
+      }
+    }
+  }
+  else if (catby == 'sports')
+  {
+    for(let i=0; i<Arraycopy.length; i++ )
+    {
+      if (Arraycopy[i].category == 'sports')
+      {
+        categArray.push(Arraycopy[i]);
+      }
+    }
+  }
+  else if (catby == 'watches')
+  {
+    for(let i=0; i<Arraycopy.length; i++ )
+    {
+      if (Arraycopy[i].category == 'watches')
+      {
+        categArray.push(Arraycopy[i]);
+      }
+    }
+  }
+  return categArray;
+}
 function menuVisible() /* show menu on click in mobile version */
 {
     document.getElementById("search").classList.toggle("visible");
@@ -256,16 +379,71 @@ function minusPrice(event) /* decrease quantity by 1 onclick  */
     let total= qnt * price;
     event.target.parentElement.children[3].innerHTML = `$ ${total.toFixed(2)}`;
 }
+function displayPaginationAsString(numOfProducts, productsLength, pageNum)
+{ 
+  let page = parseInt(pageNum);
+  let numOfPages = Math.ceil(numOfProducts/productsLength);
+  let pagination= `<div class="page-align">
+                  <p><span class= "productString">${PaginationFirstString(productsLength, page)}</span> of ${numOfProducts} products</p>
+                  <nav aria-label="Product Pages" class="pagination">
+                  <a href="#" aria-label="Previous page">&laquo;</a>
+                  <a href="#" class="active pageNum" data-value="${page}" aria-label="Current Page, Page 1" aria-current="true">${page}</a>`;
+   for(let i=2; i<=numOfPages; i++)
+   {
+        pagination += `<a href="#" class="pageNum" data-value="${i}" aria-label="Page ${i}">${i}</a>`;
+   }     
+pagination+= `<a href="#" aria-label="Next page">&raquo;</a>`;
+return pagination;
+}
+
+
+function PaginationFirstString(productsLength, page)
+{
+  
+  if (productsLength== 1 || productsLength == 6 || productsLength == 11 || productsLength == 16)
+  {
+    return `${productsLength}`
+  }
+  else
+  {
+   return  `${page} - ${productsLength}`;
+  }
+}
+function submitTheSearchForm(e)
+{
+  
+  const filteredProducts = allproducts.filter(p => p.name.toLowerCase().includes(e.target.value) || p.discountedPrice <= (parseFloat(e.target.value)))
+
+//  console.log(allproducts.filter(p => p.discountedPrice <= (parseFloat(e.target.value))));
+  return filteredProducts;
+  // renderProductsFromArray(filteredProducts);
+}
+
 
 window.addEventListener("load", ()=> {
-    renderProductsFromArray(allproducts);  
     let dropMenu = document.getElementById("menu");
     let filterBtn = document.querySelector(".filter-btn");
     let sort = document.getElementById("sort");
+    let arrayToDisplay;
+    renderProductsFromArray(allproducts); 
+   
+   document.getElementById("find").addEventListener("input", (e) => {
+      arrayToDisplay = submitTheSearchForm(e);
+      renderProductsFromArray(arrayToDisplay)
+   });
+
+
+   document.getElementById("categ").addEventListener("change", ()=> {
+     arrayToDisplay = categoriesBy(allproducts);
+     renderProductsFromArray(arrayToDisplay); 
+     // listen to category change event
+   // receive the categorized array
+   // render the array to page
+   // render back the page view
+   })  
     
-    
-    
-    sort.addEventListener("change", sortTheProducts);
+    sort.addEventListener("change", () => sortTheProducts(arrayToDisplay));
+    // sort.addEventListener("change", sortTheProducts);
     filterBtn.addEventListener("click",filterVisible);
     dropMenu.addEventListener("click", menuVisible);
 });
