@@ -30,7 +30,7 @@
             <label>Search
               <input type="search" name="find" id="find" class="search">
             </label>
-            <button type="button"><span class="material-icons">search</span></button>
+            <button type="button"><span class="material-icons srchicon">search</span></button>
           </form>  
             <!-- Navigation menu and toggle button (example) -->
           <nav class="mainmenu" id="mainmenu" aria-label="Primary">
@@ -58,22 +58,27 @@
     </header>
 
     <main>
-      <div class="responsive">
-        <img src="img/bag.png" alt="shoppingbag">
-        <div class="text-block position">
-          <p><a href="#">Buy Gifts to your Friends and Family this Christmas</a></p>
+      <div class="topimg">
+        <div class="responsive">
+          <img src="img/bag.png" alt="shoppingbag">
+          <div class="text-block position">
+            <p><a href="#">Buy Gifts to your Friends and Family this Christmas</a></p>
+          </div>
         </div>
-      </div>
-      <div class="responsive">
-        <img src="img/giftcard.png" alt="giftcard">
-        <div class="text-block position">
-            <p><a href="#">Remember your Friends and Family with Everest Gift cards</a></p>
+        <div class="responsive">
+          <img src="img/giftcard.png" alt="giftcard">
+          <div class="text-block position">
+              <p><a href="#">Remember your Friends and Family with Everest Gift cards</a></p>
+          </div>
         </div>
-      </div>
-      <div class="responsive">
-        <img src="img/productcollection.jpeg" alt="product Collection">
-        <div class="text-block position">
-            <p><a href="#">Get 50% Off on exciting Products</a></p>
+        <div class="responsive">
+          <img src="img/productcollection.jpeg" alt="product Collection">
+          <div class="text-block position">
+              <p><a href="#">Get 50% Off on exciting Products</a></p>
+          </div>
+        </div>
+        <div class="gif">
+          <img src="img/boxing-day-sales.gif" alt="salesbanner">
         </div>
       </div>
       <header>
@@ -139,7 +144,8 @@
                 </ol>
               </fieldset>
             </div>
-          <fieldset class="sort">
+          <div class="sort-categ">
+            <fieldset class="sort">
               <label for="sort">Show</label>
               <select name="sort" id="sort">
                 <option value="none" disabled selected> -- Sort by -- </option>
@@ -159,6 +165,7 @@
                 <option value="watches">watches</option>
               </select>
             </fieldset>
+          </div>
         </form>
       </header>
 
@@ -285,30 +292,34 @@
           </div>
       </div>
       <div class="responsive-icon">
-        <a href="#" class="social-dis apple">
-          <i class="fab fa-apple appleicon"></i>
-          <div>
-            <h6>Download on the </h6> 
-            <h3>App Store</h3>
+        <div class="apple-google">
+          <div></div>
+          <div class="apple">
+            <a href="#" class="social-dis"><i class="fab fa-apple appleicon"></i>
+              <div><h6>Download on the </h6> <h3>App Store</h3>
+              </div>
+            </a>
           </div>
-        </a>
-        <a href="#" class="social-dis google">
-          <div>
-            <img class="google-play" src="/img/google-play.png" alt="google">
-            <i class="fab fa-google-play googleIcon"></i>
+          <div class="google">
+            <a href="#" class="social-dis">
+              <div>
+                <img class="google-play" src="/img/google-play.png" alt="google">
+                <i class="fab fa-google-play googleIcon"></i>
+              </div>
+              <div>
+                <h6>GET IT ON</h6> 
+                <h3>Google Play</h3>
+              </div>
+            </a>
           </div>
-          <div>
-            <h6>GET IT ON</h6> 
-            <h3>Google Play</h3>
-          </div>
-        </a>
-        
+          <div></div>
+        </div>  
         <div class="icon">
-            <a href="#"><i class="fab fa-facebook-square f"></i></a>
-            <a href="#"><i class="fab fa-instagram i"></i></a>
-            <a href="#"><i class="fab fa-twitter t"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in in"></i></a>
-            <a href="#"><i class="fab fa-youtube y"></i></a>
+          <a href="#"><i class="fab fa-facebook-square f"></i></a>
+          <a href="#"><i class="fab fa-instagram i"></i></a>
+          <a href="#"><i class="fab fa-twitter t"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in in"></i></a>
+          <a href="#"><i class="fab fa-youtube y"></i></a>
         </div>
         <p>&copy;2010-2019 Developed by Jhupro</p>
       </div>
