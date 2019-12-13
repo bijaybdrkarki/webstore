@@ -635,6 +635,7 @@ h2{
     .gif{
         display: block;
         max-width: 25em;
+        margin-left:0.5em;
     }
     .sort-categ{
         display: flex;
